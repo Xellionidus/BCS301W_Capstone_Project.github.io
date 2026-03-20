@@ -3,281 +3,271 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doctor Appointment Scheduling App</title>
+  <title>MediSchedule | Doctor Appointment Scheduling App</title>
   <meta
     name="description"
-    content="A professional project website for a Doctor Appointment Scheduling App."
+    content="Doctor Appointment Scheduling App with dashboard, calendar UI, patient portal, dark mode, and Firebase support."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar container">
-      <div class="logo">MediSchedule</div>
-      <ul class="nav-links">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#users">Users</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#demo">Demo</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero-content container">
-      <div class="hero-text">
-        <p class="badge">Healthcare Scheduling Project</p>
-        <h1>Doctor Appointment Scheduling App</h1>
-        <p class="hero-description">
-          A modern scheduling platform designed to help medical offices reduce
-          booking errors, improve patient access, and streamline front desk
-          operations.
-        </p>
-        <div class="hero-buttons">
-          <a href="#features" class="btn btn-primary">Explore Features</a>
-          <a href="#demo" class="btn btn-secondary">View Demo</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge">M</div>
+        <div>
+          <h2>MediSchedule</h2>
+          <p>Capstone Project</p>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>Today's Appointments</h3>
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-section="dashboardSection">Dashboard</button>
+        <button class="nav-btn" data-section="calendarSection">Calendar</button>
+        <button class="nav-btn" data-section="portalSection">Patient Portal</button>
+        <button class="nav-btn" data-section="bookingSection">Book Appointment</button>
+      </nav>
 
-        <div class="appointment-item">
-          <div>
-            <strong>9:00 AM</strong>
-            <p>New Patient Visit</p>
-          </div>
-          <span class="status open">Confirmed</span>
-        </div>
-
-        <div class="appointment-item">
-          <div>
-            <strong>11:30 AM</strong>
-            <p>Follow-Up Appointment</p>
-          </div>
-          <span class="status booked">Booked</span>
-        </div>
-
-        <div class="appointment-item">
-          <div>
-            <strong>2:15 PM</strong>
-            <p>Annual Physical</p>
-          </div>
-          <span class="status reminder">Reminder Sent</span>
-        </div>
+      <div class="sidebar-footer">
+        <button id="themeToggle" class="outline-btn">Toggle Dark Mode</button>
+        <button id="logoutBtn" class="danger-btn">Log Out</button>
       </div>
-    </div>
-  </header>
+    </aside>
 
-  <main>
-    <section id="overview" class="section container reveal">
-      <h2>Overview</h2>
-      <p class="section-text">
-        Many smaller medical offices still depend on phone calls, paper notes,
-        or outdated systems to handle appointments. This project proposes a
-        centralized appointment scheduling application that helps patients,
-        doctors, and staff manage the scheduling process more efficiently.
-      </p>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3>24</h3>
-          <p>Week Project Plan</p>
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>Doctor Appointment Scheduling App</h1>
+          <p class="muted">Modern scheduling for patients, doctors, and office staff</p>
         </div>
-        <div class="stat-card">
-          <h3>4</h3>
-          <p>Main User Groups</p>
+        <div class="topbar-user">
+          <span id="currentUserDisplay">Guest</span>
         </div>
-        <div class="stat-card">
-          <h3>6</h3>
-          <p>Core Feature Areas</p>
-        </div>
-        <div class="stat-card">
-          <h3>100%</h3>
-          <p>Browser Accessible</p>
-        </div>
-      </div>
-    </section>
+      </header>
 
-    <section id="features" class="section alt-section">
-      <div class="container reveal">
-        <h2>Features</h2>
-        <p class="section-text">
-          The platform is built around convenience, accuracy, and efficiency.
-        </p>
-
-        <div class="card-grid">
-          <article class="info-card">
-            <h3>Online Booking</h3>
-            <p>Patients can choose a doctor, appointment type, date, and time.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>Reschedule & Cancel</h3>
-            <p>Appointments can be updated without forcing staff to start over.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>Availability Tracking</h3>
-            <p>Only open time slots are shown to prevent double booking.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>Automated Reminders</h3>
-            <p>Email or text reminders help lower the number of missed visits.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>Reports</h3>
-            <p>Staff can review daily schedules, no-shows, and office activity.</p>
-          </article>
-
-          <article class="info-card">
-            <h3>Secure Access</h3>
-            <p>Role-based login protects patient and scheduling information.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="users" class="section container reveal">
-      <h2>Users</h2>
-      <p class="section-text">
-        The application supports several user types across the medical office.
-      </p>
-
-      <div class="card-grid">
-        <article class="info-card">
-          <h3>Patients</h3>
-          <ul>
-            <li>Create accounts</li>
-            <li>Book appointments</li>
-            <li>View upcoming visits</li>
-            <li>Cancel or reschedule</li>
-          </ul>
-        </article>
-
-        <article class="info-card">
-          <h3>Front Desk Staff</h3>
-          <ul>
-            <li>Schedule appointments</li>
-            <li>Manage daily calendar</li>
-            <li>Update patient bookings</li>
-            <li>Generate reports</li>
-          </ul>
-        </article>
-
-        <article class="info-card">
-          <h3>Doctors & Admins</h3>
-          <ul>
-            <li>Review schedules</li>
-            <li>Track appointment details</li>
-            <li>Manage availability</li>
-            <li>Monitor system use</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="requirements" class="section alt-section">
-      <div class="container reveal">
-        <h2>System Requirements</h2>
-        <p class="section-text">
-          The system includes both functional and nonfunctional requirements.
-        </p>
-
-        <div class="requirements-layout">
-          <div class="requirements-box">
-            <h3>Functional Requirements</h3>
-            <ul>
-              <li>User login and account creation</li>
-              <li>Search available appointment slots</li>
-              <li>Schedule, cancel, and reschedule appointments</li>
-              <li>Send automated reminders</li>
-              <li>Generate scheduling reports</li>
-            </ul>
+      <section id="loginScreen" class="auth-wrap">
+        <div class="auth-card">
+          <div class="auth-header">
+            <p class="eyebrow">Healthcare Scheduling System</p>
+            <h2>Login to MediSchedule</h2>
+            <p class="muted">
+              Enter your information to access the scheduling dashboard.
+            </p>
           </div>
 
-          <div class="requirements-box">
-            <h3>Nonfunctional Requirements</h3>
-            <ul>
-              <li>Fast response time</li>
-              <li>Mobile-friendly design</li>
-              <li>Reliable data storage</li>
-              <li>Secure access control</li>
-              <li>Easy-to-use interface</li>
-            </ul>
-          </div>
+          <form id="loginForm" class="auth-form">
+            <label for="loginName">Full Name</label>
+            <input type="text" id="loginName" placeholder="Enter your name" required />
+
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required />
+
+            <label for="loginRole">Role</label>
+            <select id="loginRole" required>
+              <option value="">Select role</option>
+              <option value="Patient">Patient</option>
+              <option value="Front Desk Staff">Front Desk Staff</option>
+              <option value="Doctor">Doctor</option>
+              <option value="Administrator">Administrator</option>
+            </select>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter password" required />
+
+            <button type="submit" class="primary-btn full-width">Enter Dashboard</button>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="demo" class="section container reveal">
-      <h2>Appointment Demo</h2>
-      <p class="section-text">
-        This sample form gives the site a more realistic project feel.
-      </p>
-
-      <div class="demo-grid">
-        <form class="booking-form" id="bookingForm">
-          <label for="patientName">Patient Name</label>
-          <input type="text" id="patientName" placeholder="Enter patient name" required />
-
-          <label for="doctor">Doctor</label>
-          <select id="doctor" required>
-            <option value="">Select doctor</option>
-            <option>Dr. Martinez</option>
-            <option>Dr. Kim</option>
-            <option>Dr. Patel</option>
-            <option>Dr. Chen</option>
-          </select>
-
-          <label for="date">Appointment Date</label>
-          <input type="date" id="date" required />
-
-          <label for="time">Appointment Time</label>
-          <select id="time" required>
-            <option value="">Select time</option>
-            <option>9:00 AM</option>
-            <option>10:30 AM</option>
-            <option>1:15 PM</option>
-            <option>3:00 PM</option>
-          </select>
-
-          <label for="type">Appointment Type</label>
-          <select id="type" required>
-            <option value="">Select type</option>
-            <option>New Patient Visit</option>
-            <option>Follow-Up</option>
-            <option>Annual Physical</option>
-            <option>Consultation</option>
-          </select>
-
-          <button type="submit" class="btn btn-primary full-btn">
-            Book Appointment
-          </button>
-        </form>
-
-        <div class="confirmation-box">
-          <h3>Live Preview</h3>
-          <p>
-            Fill out the form to simulate an appointment booking for your project
-            demo.
-          </p>
-          <div id="confirmationMessage" class="message-box">
-            No appointment submitted yet.
+      <div id="appContent" class="hidden">
+        <section id="dashboardSection" class="content-section active-section">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">System Overview</p>
+              <h2>Welcome back, <span id="heroUserName">User</span></h2>
+              <p class="muted">
+                Manage appointments, review activity, monitor schedules, and improve patient experience.
+              </p>
+            </div>
+            <div class="quick-stats">
+              <div class="stat-card">
+                <h3 id="statAppointments">0</h3>
+                <p>Total Appointments</p>
+              </div>
+              <div class="stat-card">
+                <h3>4</h3>
+                <p>System Roles</p>
+              </div>
+              <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Patient Booking Access</p>
+              </div>
+              <div class="stat-card">
+                <h3 id="statToday">0</h3>
+                <p>Appointments Today</p>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <div class="dashboard-grid">
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Recent Appointments</h3>
+                <span class="badge">Live Data</span>
+              </div>
+              <div id="recentAppointments" class="list-stack">
+                <div class="empty-state">No appointments yet.</div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Office Highlights</h3>
+              </div>
+              <div class="insight-list">
+                <div class="insight-card">
+                  <strong>Reduced errors</strong>
+                  <p>Centralized scheduling helps prevent duplicate or overlapping bookings.</p>
+                </div>
+                <div class="insight-card">
+                  <strong>Improved patient access</strong>
+                  <p>Patients can view time slots and request visits without calling the office.</p>
+                </div>
+                <div class="insight-card">
+                  <strong>Stronger workflow</strong>
+                  <p>Front desk and doctors can work from one shared schedule.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="calendarSection" class="content-section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Appointments View</p>
+              <h2>Calendar UI</h2>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="calendar-header">
+              <button id="prevMonth" class="outline-btn small-btn">Previous</button>
+              <h3 id="calendarMonthLabel">Month Year</h3>
+              <button id="nextMonth" class="outline-btn small-btn">Next</button>
+            </div>
+
+            <div class="calendar-weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+
+            <div id="calendarGrid" class="calendar-grid"></div>
+          </div>
+        </section>
+
+        <section id="portalSection" class="content-section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Patient Access</p>
+              <h2>Patient Portal</h2>
+            </div>
+          </div>
+
+          <div class="portal-grid">
+            <div class="panel">
+              <h3>Patient Information</h3>
+              <div class="info-list">
+                <div><strong>Name:</strong> <span id="portalName">-</span></div>
+                <div><strong>Email:</strong> <span id="portalEmail">-</span></div>
+                <div><strong>Role:</strong> <span id="portalRole">-</span></div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3>Upcoming Visits</h3>
+              <div id="portalAppointments" class="list-stack">
+                <div class="empty-state">No upcoming visits yet.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="bookingSection" class="content-section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Appointment Management</p>
+              <h2>Book Appointment</h2>
+            </div>
+          </div>
+
+          <div class="booking-grid">
+            <form id="bookingForm" class="panel form-panel">
+              <label for="patientName">Patient Name</label>
+              <input type="text" id="patientName" placeholder="Enter patient name" required />
+
+              <label for="patientEmail">Patient Email</label>
+              <input type="email" id="patientEmail" placeholder="Enter patient email" required />
+
+              <label for="doctor">Doctor</label>
+              <select id="doctor" required>
+                <option value="">Select doctor</option>
+                <option>Dr. Martinez</option>
+                <option>Dr. Kim</option>
+                <option>Dr. Patel</option>
+                <option>Dr. Chen</option>
+              </select>
+
+              <label for="date">Appointment Date</label>
+              <input type="date" id="date" required />
+
+              <label for="time">Appointment Time</label>
+              <select id="time" required>
+                <option value="">Select time</option>
+                <option>9:00 AM</option>
+                <option>10:30 AM</option>
+                <option>1:15 PM</option>
+                <option>3:00 PM</option>
+              </select>
+
+              <label for="type">Appointment Type</label>
+              <select id="type" required>
+                <option value="">Select type</option>
+                <option>New Patient Visit</option>
+                <option>Follow-Up</option>
+                <option>Annual Physical</option>
+                <option>Consultation</option>
+              </select>
+
+              <label for="notes">Visit Notes</label>
+              <textarea id="notes" rows="4" placeholder="Optional visit notes"></textarea>
+
+              <button type="submit" class="primary-btn full-width">Save Appointment</button>
+            </form>
+
+            <div class="panel">
+              <h3>Submission Preview</h3>
+              <div id="confirmationMessage" class="message-box">
+                No appointment submitted yet.
+              </div>
+
+              <div class="save-note">
+                <strong>Database Status</strong>
+                <p id="firebaseStatus">Firebase is not connected yet.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </main>
+    </main>
+  </div>
 
-  <footer>
-    <div class="container footer-content">
-      <p>Doctor Appointment Scheduling App</p>
-      <p>Created by Antony Benitez</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
